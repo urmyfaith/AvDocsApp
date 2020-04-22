@@ -26,7 +26,6 @@ func (cv *CustomValidator) Validate(i interface{}) error {
 	return cv.validator.Struct(i)
 }
 
-
 func main() {
 	// Echo instance
 	e := echo.New()
@@ -37,7 +36,6 @@ func main() {
 	//middlewares custom cors
 	e.Use(middleware.CORSWithConfig(middlewares.CorsPolicy()))
 
-
 	//request model validator.
 	e.Validator = &CustomValidator{validator: validator.New()}
 
@@ -46,7 +44,7 @@ func main() {
 	e.Use(middleware.Recover())
 
 	// Login route
-	e.POST("/login", handlers.Login())
+	e.POST("/login", handlers.Login(MysqlPool))
 
 	// Restricted group
 	r := e.Group("")

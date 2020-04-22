@@ -2,6 +2,7 @@ package handlers
 
 import (
 	"AvDocsApp/model"
+	"database/sql"
 	"fmt"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/labstack/echo"
@@ -9,19 +10,26 @@ import (
 	"time"
 )
 
-func Login() echo.HandlerFunc {
-	return func (c echo.Context) (err error) {
+func Login(db *sql.DB) echo.HandlerFunc {
+	return func(c echo.Context) (err error) {
 		u := new(model.Client)
 		if err := c.Bind(u); err != nil {
 			return err
 		}
 
-		fmt.Println("Username : ",u.Username)
-		// Throws unauthorized error
-		if u.Username != "sakibmulla@gmail.com" || u.Password != "12345678" {
+		counts := model.CheckLogin(u, db)
+
+		fmt.Println("Username : ", u.Username)
+
+		if counts == 0 {
 			fmt.Println("unauthorised")
 			return echo.ErrUnauthorized
 		}
+		// Throws unauthorized error
+		//if u.Username != "sakibmulla@gmail.com" || u.Password != "12345678" {
+		//	fmt.Println("unauthorised")
+		//	return echo.ErrUnauthorized
+		//}
 
 		// Create token
 		token := jwt.New(jwt.SigningMethodHS256)
@@ -29,7 +37,7 @@ func Login() echo.HandlerFunc {
 		// Set claims
 		claims := token.Claims.(jwt.MapClaims)
 		claims["name"] = u.Username
-		claims["admin"] = true
+		claims["role"] = "admin"
 		claims["exp"] = time.Now().Add(time.Hour * 72).Unix()
 
 		// Generate encoded token and send it as response.
