@@ -714,237 +714,275 @@
     <user id="223" parent="1" name="skm">
       <Host>%</Host>
     </user>
-    <table id="224" parent="2" name="ClinicMaster">
+    <table id="224" parent="2" name="ClinicContact"/>
+    <table id="225" parent="2" name="ClinicMaster">
       <Comment>Clinic data</Comment>
     </table>
-    <table id="225" parent="2" name="Login_master"/>
-    <table id="226" parent="2" name="UserMaster">
+    <table id="226" parent="2" name="Login_master"/>
+    <table id="227" parent="2" name="UserMaster">
       <Comment>UserData</Comment>
     </table>
-    <table id="227" parent="2" name="user"/>
-    <column id="228" parent="224" name="ClinicId">
+    <table id="228" parent="2" name="user"/>
+    <column id="229" parent="224" name="ClinicId">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="230" parent="224" name="ClinicName">
+      <Position>2</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="231" parent="224" name="ContactNo">
+      <Position>3</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="232" parent="224" name="ClinicContact_ClinicMaster_ClinicId_fk">
+      <ColNames>ClinicId</ColNames>
+      <Type>btree</Type>
+    </index>
+    <column id="233" parent="225" name="ClinicId">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="229" parent="224" name="ClinicName">
+    <column id="234" parent="225" name="ClinicName">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="230" parent="224" name="ContactNo">
+    <column id="235" parent="225" name="ContactNo">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="231" parent="224" name="Address">
+    <column id="236" parent="225" name="Address">
       <Position>4</Position>
       <DataType>varchar(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="232" parent="224" name="Pincode">
+    <column id="237" parent="225" name="Pincode">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="233" parent="224" name="District">
+    <column id="238" parent="225" name="District">
       <Position>6</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="234" parent="224" name="Country">
+    <column id="239" parent="225" name="Country">
       <Position>7</Position>
       <DataType>varchar(10)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="235" parent="224" name="CreatedDate">
+    <column id="240" parent="225" name="CreatedDate">
       <Position>8</Position>
       <DataType>timestamp|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="236" parent="224" name="PRIMARY">
+    <column id="241" parent="225" name="CreatedBy">
+      <Position>9</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="242" parent="225" name="Cityname">
+      <Position>10</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="243" parent="225" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ClinicId</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="237" parent="225" name="id">
+    <column id="244" parent="226" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="238" parent="225" name="name">
+    <column id="245" parent="226" name="name">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="239" parent="225" name="email">
+    <column id="246" parent="226" name="email">
       <Position>3</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="240" parent="225" name="password">
+    <column id="247" parent="226" name="password">
       <Position>4</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="241" parent="225" name="status">
+    <column id="248" parent="226" name="status">
       <Position>5</Position>
       <DataType>varchar(1)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="242" parent="225" name="address">
+    <column id="249" parent="226" name="address">
       <Position>6</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="243" parent="225" name="created_date">
+    <column id="250" parent="226" name="created_date">
       <Position>7</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="244" parent="225" name="session_flag">
+    <column id="251" parent="226" name="session_flag">
       <Position>8</Position>
       <DataType>varchar(1)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="245" parent="225" name="role">
+    <column id="252" parent="226" name="role">
       <Position>9</Position>
       <Comment>admin, user, doctor, nurse, medical</Comment>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="246" parent="225" name="expiry_date">
+    <column id="253" parent="226" name="expiry_date">
       <Position>10</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="247" parent="225" name="PRIMARY">
+    <key id="254" parent="226" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="248" parent="226" name="ClinicId">
+    <column id="255" parent="227" name="ClinicId">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="249" parent="226" name="Id">
+    <column id="256" parent="227" name="Id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="250" parent="226" name="FirstName">
+    <column id="257" parent="227" name="FirstName">
       <Position>3</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="251" parent="226" name="LastName">
+    <column id="258" parent="227" name="LastName">
       <Position>4</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="252" parent="226" name="Dob">
+    <column id="259" parent="227" name="Dob">
       <Position>5</Position>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="253" parent="226" name="Email">
+    <column id="260" parent="227" name="Email">
       <Position>6</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="254" parent="226" name="ContactNo">
+    <column id="261" parent="227" name="ContactNo">
       <Position>7</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="255" parent="226" name="StatusFlag">
+    <column id="262" parent="227" name="StatusFlag">
       <Position>8</Position>
       <DataType>varchar(1)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="256" parent="226" name="CreatedDate">
+    <column id="263" parent="227" name="CreatedDate">
       <Position>9</Position>
       <DataType>timestamp|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="257" parent="226" name="ExpiryDate">
+    <column id="264" parent="227" name="ExpiryDate">
       <Position>10</Position>
       <DataType>timestamp|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="258" parent="226" name="username">
+    <column id="265" parent="227" name="username">
       <Position>11</Position>
       <DataType>varchar(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="259" parent="226" name="password">
+    <column id="266" parent="227" name="password">
       <Position>12</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="260" parent="226" name="SessionFlag">
+    <column id="267" parent="227" name="SessionFlag">
       <Position>13</Position>
       <DataType>varchar(2)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="261" parent="226" name="role">
+    <column id="268" parent="227" name="role">
       <Position>14</Position>
       <DataType>varchar(10)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="262" parent="226" name="UserMaster_username_uindex">
+    <column id="269" parent="227" name="CreatedBy">
+      <Position>15</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="270" parent="227" name="UserMaster_username_uindex">
       <ColNames>username</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="263" parent="226" name="UserMaster_ClinicMaster_ClinicId_fk">
+    <index id="271" parent="227" name="UserMaster_ClinicMaster_ClinicId_fk">
       <ColNames>ClinicId</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="264" parent="226" name="PRIMARY">
+    <key id="272" parent="227" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Id
 ClinicId</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="265" parent="226" name="UserMaster_username_uindex">
+    <key id="273" parent="227" name="UserMaster_username_uindex">
       <ColNames>username</ColNames>
       <UnderlyingIndexName>UserMaster_username_uindex</UnderlyingIndexName>
     </key>
-    <column id="266" parent="227" name="name">
+    <column id="274" parent="228" name="name">
       <Position>1</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="267" parent="227" name="email">
+    <column id="275" parent="228" name="email">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
