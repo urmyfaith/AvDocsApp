@@ -20,7 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28a3bd0a-e4da-43d0-ad07-84aaeac3a636" name="Default Changelist" comment="commit">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/ClinicMaster.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/ClinicMaster.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/UserMaster.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/UserMaster.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,10 +104,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="587" y="134" key="Github.UntrackedFilesDialog/0.0.1440.860@0.0.1440.860" timestamp="1587497697497" />
-    <state x="329" y="416" width="622" height="444" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1587577938934">
+    <state x="539" y="305" width="622" height="444" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1587724694960">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="329" y="416" width="622" height="444" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1440.860@0.0.1440.860" timestamp="1587577938934" />
+    <state x="539" y="305" width="622" height="444" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1440.860@0.0.1440.860" timestamp="1587724694960" />
     <state x="383" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1587571624649">
       <screen x="0" y="0" width="1440" height="860" />
     </state>

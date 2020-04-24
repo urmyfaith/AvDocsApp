@@ -11,4 +11,5 @@ type ClinicMaster struct {
 	District    string    `json:"district" validate:"required"`
 	Country     string    `json:"country" validate:""`
 	CreatedDate time.Time `json:"country"`
+	CreatedBy   int64     `json:"createdBy" validate:"required"`
 }

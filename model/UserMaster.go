@@ -19,4 +19,5 @@ type UserMasters struct {
 	Password    string    `json:"password" validate:"required"`
 	SessionFlag string    `json:"sessionFlag"`
 	Role        string    `json:"role" validate:"required"`
+	CreatedBy   int64     `json:"createdBy" validate:"required"`
 }
