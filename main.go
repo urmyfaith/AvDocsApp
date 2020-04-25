@@ -50,6 +50,7 @@ func main() {
 	r := e.Group("")
 	r.Use(middleware.JWT([]byte("secret")))
 	r.GET("/", handlers.Dashboard())
+	r.POST("/addclinic", handlers.AddClinic(MysqlPool))
 
 	//start server
 	e.Logger.Fatal(e.Start(":8000"))
