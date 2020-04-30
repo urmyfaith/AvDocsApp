@@ -1,6 +1,7 @@
 package model
 
 import (
+	"AvDocsApp/db"
 	"github.com/jinzhu/gorm"
 )
 
@@ -10,11 +11,12 @@ type Client struct {
 	Password string `json:"password" xml:"password" validate:"required"`
 }
 
-func CheckLogin(u *Client, db *gorm.DB) int {
-	defer db.Close()
+func CheckLogin(u *Client) int {
+	dbs := db.DbConn()
+	defer dbs.Close()
 	var counts int
 	var clients Client
-	db.Where("username = ? AND password = ?", u.Username, u.Password).Find(&clients).Count(&counts)
+	dbs.Where("username = ? AND password = ?", u.Username, u.Password).Find(&clients).Count(&counts)
 	return counts
 }
 

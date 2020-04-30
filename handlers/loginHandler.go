@@ -5,30 +5,24 @@ import (
 	//"database/sql"
 	"fmt"
 	"github.com/dgrijalva/jwt-go"
-	"github.com/jinzhu/gorm"
 	"github.com/labstack/echo"
 	"net/http"
 	"time"
 )
 
-func Login(db *gorm.DB) echo.HandlerFunc {
+func Login() echo.HandlerFunc {
 	return func(c echo.Context) (err error) {
 		u := new(model.Client)
 		if err := c.Bind(u); err != nil {
 			return err
 		}
-		counts := model.CheckLogin(u, db)
+		counts := model.CheckLogin(u)
 		fmt.Println("Username : ", u.Username)
 
 		if counts == 0 {
 			fmt.Println("unauthorised")
 			return echo.ErrUnauthorized
 		}
-		// Throws unauthorized error
-		//if u.Username != "sakibmulla@gmail.com" || u.Password != "12345678" {
-		//	fmt.Println("unauthorised")
-		//	return echo.ErrUnauthorized
-		//}
 
 		// Create token
 		token := jwt.New(jwt.SigningMethodHS256)

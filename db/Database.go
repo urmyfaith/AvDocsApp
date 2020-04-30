@@ -17,19 +17,18 @@ func DbConn() (dbs *gorm.DB) {
 		if err != nil {
 			panic(err.Error())
 		}
-
 	return dbs
 }
 
-func DbTables(dbs *gorm.DB) {
-	defer dbs.Close()
-	//dbs.DropTableIfExists(&model.Clinicmaster{}, &model.Telnumber{})
-	//dbs.CreateTable(&model.Client{})
-	//dbs.CreateTable(&model.Clinicmaster{}, &model.Telnumber{})
-	//dbs.AutoMigrate(&model.Client{})
-	//dbs.AutoMigrate(&model.Telnumber{})
-	//dbs.Create(&model.Client{Username: "sakib@gmail.com", Password: "12345678"})
-}
+//func DbTables(dbs *gorm.DB) {
+//	defer dbs.Close()
+//	//dbs.DropTableIfExists(&model.Clinicmaster{}, &model.Telnumber{})
+//	//dbs.CreateTable(&model.Client{})
+//	//dbs.CreateTable(&model.Clinicmaster{}, &model.Telnumber{})
+//	//dbs.AutoMigrate(&model.Client{})
+//	//dbs.AutoMigrate(&model.Telnumber{})
+//	//dbs.Create(&model.Client{Username: "sakib@gmail.com", Password: "12345678"})
+//}
 
 
 //func DbConn() (db *sql.DB) {

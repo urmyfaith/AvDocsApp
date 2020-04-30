@@ -1,15 +1,15 @@
 package handlers
 
 import (
+	"AvDocsApp/db"
 	"AvDocsApp/model"
 	//"database/sql"
 	"fmt"
 	"github.com/labstack/echo"
 	"net/http"
-	"github.com/jinzhu/gorm"
 )
 
-func AddClinic(db *gorm.DB) echo.HandlerFunc {
+func AddClinic() echo.HandlerFunc {
 	return func(c echo.Context) (err error) {
 		fmt.Println("reqest come inside")
 		clinic := new(model.Clinicmaster)
@@ -17,8 +17,9 @@ func AddClinic(db *gorm.DB) echo.HandlerFunc {
 			fmt.Print("badsssssssssss")
 			return err
 		}
-		defer db.Close()
-		db.Create(clinic)
+		dbs := db.DbConn()
+		defer dbs.Close()
+		dbs.Create(clinic)
 		return c.JSON(http.StatusOK, clinic)
 	}
 }

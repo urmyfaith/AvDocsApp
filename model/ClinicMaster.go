@@ -23,3 +23,9 @@ type Telnumber struct {
 	Telenumber    	int64		`json:"telenumber" validate:"required"`
 	ClinicmasterID	uint		`sql:"index"`
 }
+
+
+
+
+
+

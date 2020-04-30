@@ -1,7 +1,6 @@
 package main
 
 import (
-	"AvDocsApp/db"
 	"AvDocsApp/handlers"
 	"AvDocsApp/middlewares"
 	//"database/sql"
@@ -37,20 +36,20 @@ func main() {
 	e.Validator = &CustomValidator{validator: validator.New()}
 
 	//creating tables
-	db.DbTables(db.DbConn())
+	//db.DbTables(db.DbConn())
 
 	// Middleware
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
 
 	// Login route
-	e.POST("/login", handlers.Login(db.DbConn()))
+	e.POST("/login", handlers.Login())
 
 	// Restricted group
 	r := e.Group("")
 	r.Use(middleware.JWT([]byte("secret")))
 	r.GET("/", handlers.Dashboard())
-	r.POST("/addclinic", handlers.AddClinic(db.DbConn()))
+	r.POST("/addclinic", handlers.AddClinic())
 
 	//start server
 	e.Logger.Fatal(e.Start(":8000"))

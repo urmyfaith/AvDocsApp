@@ -20,12 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28a3bd0a-e4da-43d0-ad07-84aaeac3a636" name="Default Changelist" comment="commit">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/638c3058-d4a2-433c-a2b9-aa6d17f339c2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/638c3058-d4a2-433c-a2b9-aa6d17f339c2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/Database.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/Database.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handlers/clinichandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/clinichandler.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handlers/loginHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/loginHandler.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
