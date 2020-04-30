@@ -1,8 +1,11 @@
 package main
 
 import (
+	"AvDocsApp/db"
 	"AvDocsApp/handlers"
 	"AvDocsApp/middlewares"
+	"AvDocsApp/model"
+
 	//"database/sql"
 	"fmt"
 	"github.com/go-playground/validator/v10"
@@ -12,6 +15,15 @@ import (
 
 func init() {
 	fmt.Println("Init")
+	//creating tables
+	//DbMonitor()
+}
+
+func DbMonitor() {
+	dbs := db.DbConn()
+	defer dbs.Close()
+	dbs.DropTableIfExists(&model.Clinicmaster{}, &model.Telnumber{})
+	dbs.CreateTable(&model.Clinicmaster{}, &model.Telnumber{})
 }
 
 type CustomValidator struct {
@@ -19,6 +31,7 @@ type CustomValidator struct {
 }
 
 func (cv *CustomValidator) Validate(i interface{}) error {
+	fmt.Println(i)
 	return cv.validator.Struct(i)
 }
 
@@ -35,9 +48,6 @@ func main() {
 	//request model validator.
 	e.Validator = &CustomValidator{validator: validator.New()}
 
-	//creating tables
-	//db.DbTables(db.DbConn())
-
 	// Middleware
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
@@ -47,6 +57,7 @@ func main() {
 
 	// Restricted group
 	r := e.Group("")
+
 	r.Use(middleware.JWT([]byte("secret")))
 	r.GET("/", handlers.Dashboard())
 	r.POST("/addclinic", handlers.AddClinic())

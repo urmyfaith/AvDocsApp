@@ -14,8 +14,10 @@ type Clinicmaster struct {
 	Pincode     int       `json:"pincode" validate:"required"`
 	District    string    `json:"district" validate:"required"`
 	Country     string    `json:"country"`
+	Emailid		string	  `json:"emailid" validate:"required"`
+	Concernperson	string `json"concernperson" validate:"required"`
 	CreatedDate time.Time `json:"createdDate"`
-	CreatedBy   int64     `json:"createdBy" validate:"required"`
+	CreatedBy   int64     `json:"createdBy"`
 }
 
 type Telnumber struct {

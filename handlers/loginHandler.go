@@ -16,6 +16,9 @@ func Login() echo.HandlerFunc {
 		if err := c.Bind(u); err != nil {
 			return err
 		}
+		if err = c.Validate(u); err != nil {
+			return err
+		}
 		counts := model.CheckLogin(u)
 		fmt.Println("Username : ", u.Username)
 

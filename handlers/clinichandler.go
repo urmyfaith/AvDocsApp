@@ -17,6 +17,9 @@ func AddClinic() echo.HandlerFunc {
 			fmt.Print("badsssssssssss")
 			return err
 		}
+		if err = c.Validate(clinic); err != nil {
+			return err
+		}
 		dbs := db.DbConn()
 		defer dbs.Close()
 		dbs.Create(clinic)
