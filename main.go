@@ -4,18 +4,15 @@ import (
 	"AvDocsApp/db"
 	"AvDocsApp/handlers"
 	"AvDocsApp/middlewares"
-	"database/sql"
+	//"database/sql"
 	"fmt"
 	"github.com/go-playground/validator/v10"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 )
 
-var MysqlPool *sql.DB
-
 func init() {
 	fmt.Println("Init")
-	MysqlPool = db.DbConn()
 }
 
 type CustomValidator struct {
@@ -39,18 +36,21 @@ func main() {
 	//request model validator.
 	e.Validator = &CustomValidator{validator: validator.New()}
 
+	//creating tables
+	db.DbTables(db.DbConn())
+
 	// Middleware
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
 
 	// Login route
-	e.POST("/login", handlers.Login(MysqlPool))
+	e.POST("/login", handlers.Login(db.DbConn()))
 
 	// Restricted group
 	r := e.Group("")
 	r.Use(middleware.JWT([]byte("secret")))
 	r.GET("/", handlers.Dashboard())
-	r.POST("/addclinic", handlers.AddClinic(MysqlPool))
+	r.POST("/addclinic", handlers.AddClinic(db.DbConn()))
 
 	//start server
 	e.Logger.Fatal(e.Start(":8000"))

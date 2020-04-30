@@ -1,11 +1,14 @@
 package model
 
-import "time"
+import (
+	"github.com/jinzhu/gorm"
+	"time"
+)
 
-type ClinicMaster struct {
-	ClinicId    int64     `json:"clinicId" validate:"required"`
+type Clinicmaster struct {
+	gorm.Model
 	ClinicName  string    `json:"clinicName" validate:"required"`
-	ContactNo   []telnumber `json:"contactNo" `
+	ContactNo   []Telnumber `gorm:"foreignkey:ClinicmasterID" json:"contactNo" `
 	Cityname   	string	  `json:"cityname" validate:"required"`
 	Address     string    `json:"address"`
 	Pincode     int       `json:"pincode" validate:"required"`
@@ -15,6 +18,8 @@ type ClinicMaster struct {
 	CreatedBy   int64     `json:"createdBy" validate:"required"`
 }
 
-type telnumber struct {
-	Telenumber    int64     `json:"telenumber" validate:"required"`
+type Telnumber struct {
+	gorm.Model
+	Telenumber    	int64		`json:"telenumber" validate:"required"`
+	ClinicmasterID	uint		`sql:"index"`
 }

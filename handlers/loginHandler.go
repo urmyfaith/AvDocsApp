@@ -2,23 +2,22 @@ package handlers
 
 import (
 	"AvDocsApp/model"
-	"database/sql"
+	//"database/sql"
 	"fmt"
 	"github.com/dgrijalva/jwt-go"
+	"github.com/jinzhu/gorm"
 	"github.com/labstack/echo"
 	"net/http"
 	"time"
 )
 
-func Login(db *sql.DB) echo.HandlerFunc {
+func Login(db *gorm.DB) echo.HandlerFunc {
 	return func(c echo.Context) (err error) {
 		u := new(model.Client)
 		if err := c.Bind(u); err != nil {
 			return err
 		}
-
 		counts := model.CheckLogin(u, db)
-
 		fmt.Println("Username : ", u.Username)
 
 		if counts == 0 {
