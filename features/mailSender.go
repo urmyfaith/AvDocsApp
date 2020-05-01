@@ -10,8 +10,10 @@ import (
 )
 
 func MailCompose() {
-	from := mail.Address{"", "sakib.m@yes-info.in"}
-	to   := mail.Address{"", "sakibyups@gmail.com"}
+	//sk := []string{"sakibcoolz@gmail.com","mr.sakibmulla@gmail.com"}
+	from := mail.Address{"Sakib Mulla", "sakib.m@yes-info.in"}
+	to   := mail.Address{"SK", "sakibyups@gmail.com"}
+	//to := []mail.Address{}
 	subj := "This is the email subject"
 	body := "This is an example body.\n With two lines."
 
@@ -26,6 +28,7 @@ func MailCompose() {
 	for k,v := range headers {
 		message += fmt.Sprintf("%s: %s\r\n", k, v)
 	}
+	fmt.Println(message)
 	message += "\r\n" + body
 
 	// Connect to the SMTP Server
