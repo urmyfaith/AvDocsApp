@@ -20,10 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28a3bd0a-e4da-43d0-ad07-84aaeac3a636" name="Default Changelist" comment="commit">
+      <change afterPath="$PROJECT_DIR$/features/mailSender.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/Database.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/Database.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/clinichandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/clinichandler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/loginHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/loginHandler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/ClinicMaster.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/ClinicMaster.go" afterDir="false" />
     </list>

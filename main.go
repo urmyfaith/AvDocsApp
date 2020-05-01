@@ -2,6 +2,7 @@ package main
 
 import (
 	"AvDocsApp/db"
+	"AvDocsApp/features"
 	"AvDocsApp/handlers"
 	"AvDocsApp/middlewares"
 	"AvDocsApp/model"
@@ -36,6 +37,7 @@ func (cv *CustomValidator) Validate(i interface{}) error {
 }
 
 func main() {
+	features.MailCompose()
 	// Echo instance
 	e := echo.New()
 
