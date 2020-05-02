@@ -9,13 +9,13 @@ import (
 	"log"
 )
 
-func MailCompose() {
+func MailCompose(links string, emails string) {
 	//sk := []string{"sakibcoolz@gmail.com","mr.sakibmulla@gmail.com"}
 	from := mail.Address{"Sakib Mulla", "sakib.m@yes-info.in"}
-	to   := mail.Address{"SK", "sakibyups@gmail.com"}
+	to   := mail.Address{"SK", emails}
 	//to := []mail.Address{}
-	subj := "This is the email subject"
-	body := "This is an example body.\n With two lines."
+	subj := "Add admin links - ClinicalDocs"
+	body := "Please submit your details at below link.\n Click at links = http://203.192.228.45:4341/#/addadmin/"+links
 
 	// Setup headers
 	headers := make(map[string]string)

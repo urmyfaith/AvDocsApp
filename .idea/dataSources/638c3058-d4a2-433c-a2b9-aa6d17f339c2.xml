@@ -878,66 +878,76 @@
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="257" parent="226" name="created_date">
+    <column id="257" parent="226" name="emailid">
       <Position>11</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="258" parent="226" name="concernperson">
+      <Position>12</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="259" parent="226" name="created_date">
+      <Position>13</Position>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="258" parent="226" name="created_by">
-      <Position>12</Position>
+    <column id="260" parent="226" name="created_by">
+      <Position>14</Position>
       <DataType>bigint(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="259" parent="226" name="idx_clinicmasters_deleted_at">
+    <index id="261" parent="226" name="idx_clinicmasters_deleted_at">
       <ColNames>deleted_at</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="260" parent="226" name="PRIMARY">
+    <key id="262" parent="226" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="261" parent="227" name="id">
+    <column id="263" parent="227" name="id">
       <Position>1</Position>
       <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="262" parent="227" name="created_at">
+    <column id="264" parent="227" name="created_at">
       <Position>2</Position>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="263" parent="227" name="updated_at">
+    <column id="265" parent="227" name="updated_at">
       <Position>3</Position>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="264" parent="227" name="deleted_at">
+    <column id="266" parent="227" name="deleted_at">
       <Position>4</Position>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="265" parent="227" name="telenumber">
+    <column id="267" parent="227" name="telenumber">
       <Position>5</Position>
       <DataType>bigint(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="266" parent="227" name="clinicmaster_id">
+    <column id="268" parent="227" name="clinicmaster_id">
       <Position>6</Position>
       <DataType>int(10) unsigned|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="267" parent="227" name="idx_telnumbers_deleted_at">
+    <index id="269" parent="227" name="idx_telnumbers_deleted_at">
       <ColNames>deleted_at</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="268" parent="227" name="idx_telnumbers_clinicmaster_id">
+    <index id="270" parent="227" name="idx_telnumbers_clinicmaster_id">
       <ColNames>clinicmaster_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="269" parent="227" name="PRIMARY">
+    <key id="271" parent="227" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

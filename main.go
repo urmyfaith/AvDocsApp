@@ -2,11 +2,8 @@ package main
 
 import (
 	"AvDocsApp/db"
-	"AvDocsApp/features"
 	"AvDocsApp/handlers"
 	"AvDocsApp/middlewares"
-	"AvDocsApp/model"
-
 	//"database/sql"
 	"fmt"
 	"github.com/go-playground/validator/v10"
@@ -23,8 +20,9 @@ func init() {
 func DbMonitor() {
 	dbs := db.DbConn()
 	defer dbs.Close()
-	dbs.DropTableIfExists(&model.Clinicmaster{}, &model.Telnumber{})
-	dbs.CreateTable(&model.Clinicmaster{}, &model.Telnumber{})
+	//dbs.DropTableIfExists(&model.Clinicmaster{}, &model.Telnumber{})
+	//dbs.CreateTable(&model.Clinicmaster{}, &model.Telnumber{})
+	//dbs.CreateTable(&model.AddAdminEmail{})
 }
 
 type CustomValidator struct {
@@ -37,7 +35,7 @@ func (cv *CustomValidator) Validate(i interface{}) error {
 }
 
 func main() {
-	features.MailCompose()
+	// features.MailCompose()
 	// Echo instance
 	e := echo.New()
 

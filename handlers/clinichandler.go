@@ -2,11 +2,12 @@ package handlers
 
 import (
 	"AvDocsApp/db"
+	"AvDocsApp/features"
 	"AvDocsApp/model"
-	//"database/sql"
 	"fmt"
 	"github.com/labstack/echo"
 	"net/http"
+	"time"
 )
 
 func AddClinic() echo.HandlerFunc {
@@ -23,6 +24,10 @@ func AddClinic() echo.HandlerFunc {
 		dbs := db.DbConn()
 		defer dbs.Close()
 		dbs.Create(clinic)
+		fmt.Println("id is ",clinic.ID)
+		addAdmin := &model.AddAdminEmail{Uniqueid: features.Encryption(clinic.ClinicName+""+clinic.Emailid+""+clinic.Address), Flag: "A", Expirydate: time.Now(), ClinicmasterID: clinic.ID}
+		features.MailCompose(addAdmin.Uniqueid, clinic.Emailid)
+		dbs.Create(addAdmin)
 		return c.JSON(http.StatusOK, clinic)
 	}
 }
