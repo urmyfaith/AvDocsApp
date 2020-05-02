@@ -12,6 +12,7 @@ type AddAdminEmail struct {
 	Uniqueid	string 		`json: "uniqueid" `
 	Flag		string 		`json: "flag"`
 	Expirydate	time.Time	`json: "expiryDate"`
+	Role 		string		`json: "role"`
 	ClinicmasterID	uint	`json: "clinicmasterID" sql:"index"`
 }
 

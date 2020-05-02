@@ -20,9 +20,8 @@ func init() {
 func DbMonitor() {
 	dbs := db.DbConn()
 	defer dbs.Close()
-	//dbs.DropTableIfExists(&model.Clinicmaster{}, &model.Telnumber{})
-	//dbs.CreateTable(&model.Clinicmaster{}, &model.Telnumber{})
-	//dbs.CreateTable(&model.AddAdminEmail{})
+	//dbs.DropTableIfExists(&model.Clinicmaster{}, &model.Telnumber{}, &model.AddAdminEmail{})
+	//dbs.CreateTable(&model.Clinicmaster{}, &model.Telnumber{}, &model.AddAdminEmail{})
 }
 
 type CustomValidator struct {
@@ -69,8 +68,7 @@ func main() {
 	//addclinic
 	r.POST("/addclinic", handlers.AddClinic())
 
-
-
 	//start server
 	e.Logger.Fatal(e.Start(":8000"))
 }
+

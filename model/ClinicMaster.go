@@ -15,7 +15,9 @@ type Clinicmaster struct {
 	District    string    	`json:"district" validate:"required"`
 	Country     string    	`json:"country"`
 	Emailid		string	  	`json:"emailid" validate:"required"`
-	Concernperson	string 	`json"concernperson" validate:"required"`
+	Role        string		`json: "role" validate:"required"`
+	Concernperson	string 	`json:"concernperson" validate:"required"`
+	InternalFlag 	string 	`json: "internalFlag"`
 	CreatedDate time.Time 	`json:"createdDate"`
 	CreatedBy   int64     	`json:"createdBy"`
 }
