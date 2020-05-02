@@ -55,12 +55,21 @@ func main() {
 	// Login route
 	e.POST("/login", handlers.Login())
 
+	//addAdminEmail
+	e.GET("/addadmin/:id", handlers.AddAdminEmail())
+
 	// Restricted group
 	r := e.Group("")
 
 	r.Use(middleware.JWT([]byte("secret")))
+
+	//login
 	r.GET("/", handlers.Dashboard())
+
+	//addclinic
 	r.POST("/addclinic", handlers.AddClinic())
+
+
 
 	//start server
 	e.Logger.Fatal(e.Start(":8000"))
