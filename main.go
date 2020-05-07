@@ -20,8 +20,10 @@ func init() {
 func DbMonitor() {
 	dbs := db.DbConn()
 	defer dbs.Close()
+	//dbs.DropTableIfExists(&model.Loginmaster{})
 	//dbs.DropTableIfExists(&model.Clinicmaster{}, &model.Telnumber{}, &model.AddAdminEmail{})
 	//dbs.CreateTable(&model.Clinicmaster{}, &model.Telnumber{}, &model.AddAdminEmail{})
+	//dbs.CreateTable(&model.Loginmaster{})
 }
 
 type CustomValidator struct {
@@ -56,6 +58,9 @@ func main() {
 
 	//addAdminEmail
 	e.GET("/addadmin/:id", handlers.AddAdminEmail())
+
+	//addAdmin
+	e.POST("/saveadmin", handlers.SaveAdmin())
 
 	// Restricted group
 	r := e.Group("")
