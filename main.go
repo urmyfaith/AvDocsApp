@@ -14,16 +14,19 @@ import (
 func init() {
 	fmt.Println("Init")
 	//creating tables
-	//DbMonitor()
+	DbMonitor()
 }
 
 func DbMonitor() {
 	dbs := db.DbConn()
 	defer dbs.Close()
-	//dbs.DropTableIfExists(&model.Loginmaster{})
-	//dbs.DropTableIfExists(&model.Clinicmaster{}, &model.Telnumber{}, &model.AddAdminEmail{})
-	//dbs.CreateTable(&model.Clinicmaster{}, &model.Telnumber{}, &model.AddAdminEmail{})
-	//dbs.CreateTable(&model.Loginmaster{})
+	//dbs.DropTableIfExists(model.Loginmaster{},model.Servicemaster{}, model.Clinicmaster{}, model.Telnumber{},model.AddAdminEmail{},model.Rightsservicemapper{}, model.Rightsmaster{})
+	//dbs.CreateTable(model.Loginmaster{},model.Servicemaster{}, model.Clinicmaster{}, model.Telnumber{},model.AddAdminEmail{}, model.Rightsservicemapper{}, model.Rightsmaster{})
+	//dbs.Create(model.Servicemaster{Name: "addclinic", Htmlname: "Add Clinic", Paths: "/ClinicManagement"})
+	//dbs.Create(model.Servicemaster{Name: "adduser", Htmlname: "Add user", Paths: "/UserManagement"})
+	//dbs.Create(model.Servicemaster{Name: "todayappointment", Htmlname: "Today Appointment", Paths: "/opdTodayappointment"})
+	//dbs.Create(model.Servicemaster{Name: "newappointment", Htmlname: "New Opd Appointment", Paths: "/opdnewappointment"})
+	//dbs.Create(model.Servicemaster{Name: "opdappointmenthistory", Htmlname: "Opd Appointment History", Paths: "/opdhisappointment"})
 }
 
 type CustomValidator struct {
@@ -72,6 +75,8 @@ func main() {
 
 	//addclinic
 	r.POST("/addclinic", handlers.AddClinic())
+
+
 
 	//start server
 	e.Logger.Fatal(e.Start(":8000"))

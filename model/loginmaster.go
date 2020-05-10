@@ -10,7 +10,7 @@ type Loginmaster struct {
 	Firstname  string 		`json: "firstname" validate:"required"`
 	Lastname string 		`json: "lastname" validate:"required"`
 	Dob time.Time			`json: "dob" validate:"required"`
-	RightsNo int16			`json: "rightsNo" `
+	RightsNo uint			`json: "rightsNo" `
 	Homeaddress1 string 	`json: "homeaddress1" validate:"required"`
 	Homeaddress2 string 	`json: "homeaddress2" validate:"required"`
 	Homeaddress3 string 	`json: "homeaddress3" validate:"required"`
@@ -25,21 +25,14 @@ type Loginmaster struct {
 	Oldpassword string		`json: "oldpassword" validate:"required"`
 	Resetflag string		`json: "resetflag" `
 	Emailid string			`gorm:"PRIMARY_KEY; NOT NULL, UNIQUE_INDEX" json: "emailid" validate:"required"`
-	Contactno string			`gorm:"unique; NOT NULL, UNIQUE_INDEX" json: "contactno" validate:"required"`
+	Contactno string		`gorm:"unique; NOT NULL, UNIQUE_INDEX" json: "contactno" validate:"required"`
 	Reffcontno string		`json: "reffcontno" validate:"required"`
-	Uniqueid string		`json: "uniqueid" validate:"required"`
+	Uniqueid string			`json: "uniqueid" validate:"required"`
 	Statusflag string		`json: "statusflag"`
 	ClinicmasterID	uint	`json: "clinicmasterID" sql:"index"`
 }
 
 
-//
-//func SaveLoginMaster( loginmaster Loginmaster) (Loginmaster) {
-//	dbs := db.DbConn()
-//	defer dbs.Close()
-//	dbs.Create(loginmaster)
-//	return loginmaster
-//}
 
 
 

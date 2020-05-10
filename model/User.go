@@ -11,16 +11,20 @@ type Client struct {
 	Password string `json:"password" xml:"password" validate:"required"`
 }
 
-func CheckLogin(u *Client) int {
+func CheckLogin(u *Client) (loginmaster Loginmaster) {
 	dbs := db.DbConn()
 	defer dbs.Close()
-	var counts int
-	var clients Client
-	dbs.Where("username = ? AND password = ?", u.Username, u.Password).Find(&clients).Count(&counts)
-	return counts
+	dbs.Where("emailid = ? AND password = ?", u.Username, u.Password).Find(&loginmaster)
+	return
 }
 
-
+//func CheckLogin(u *Client) (loginmaster int) {
+//	dbs := db.DbConn()
+//	defer dbs.Close()
+//	var c Client
+//	dbs.Where("username = ? AND password = ?", u.Username, u.Password).Find(&c).Count(&loginmaster)
+//	return
+//}
 
 //func CheckLogin(u *Client, db *sql.DB) int {
 //	var counts int

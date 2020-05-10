@@ -20,11 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28a3bd0a-e4da-43d0-ad07-84aaeac3a636" name="Default Changelist" comment="commit">
-      <change afterPath="$PROJECT_DIR$/handlers/SaveAdmin.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/loginmaster.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/UserRoles.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/SaveAdmin.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/SaveAdmin.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/loginHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/loginHandler.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/AddAdminEmail.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/AddAdminEmail.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/ClinicMaster.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/ClinicMaster.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/User.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/User.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/loginmaster.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/loginmaster.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,9 +97,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="605" y="292" key="#Notifications/0.0.1440.860@0.0.1440.860" timestamp="1587497921842" />
-    <state x="312" y="88" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587575161719">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state x="188" y="69" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588876735432">
+      <screen x="0" y="0" width="1280" height="760" />
     </state>
+    <state x="188" y="69" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.760@0.0.1280.760" timestamp="1588876735432" />
     <state x="312" y="88" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.860@0.0.1440.860" timestamp="1587575161719" />
     <state x="500" y="171" key="FileChooserDialogImpl" timestamp="1587497681859">
       <screen x="0" y="0" width="1440" height="860" />
@@ -121,20 +126,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="539" y="305" width="622" height="444" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1440.860@0.0.1440.860" timestamp="1587751489151" />
-    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1587899529265">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state x="340" y="159" width="672" height="600" key="search.everywhere.popup" timestamp="1588875211797">
+      <screen x="0" y="0" width="1280" height="760" />
     </state>
+    <state x="340" y="159" width="672" height="600" key="search.everywhere.popup/0.0.1280.760@0.0.1280.760" timestamp="1588875211797" />
     <state x="383" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1587899529265" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/model/loginmaster.go</url>
-          <line>18</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -8,7 +8,7 @@ import (
 type Clinicmaster struct {
 	gorm.Model
 	ClinicName  string    	`json:"clinicName" validate:"required"`
-	ContactNo   []Telnumber `gorm:"foreignkey:ClinicmasterID" json:"contactNo" `
+	ContactNo   []Telnumber `gorm:"foreignkey:ClinicmasterID" json:"contactNo"`
 	Cityname   	string	  	`json:"cityname" validate:"required"`
 	Address     string    	`json:"address"`
 	Pincode     int       	`json:"pincode" validate:"required"`

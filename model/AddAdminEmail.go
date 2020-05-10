@@ -38,6 +38,14 @@ func UpdateFlag(uniqueid string) (addAdminEmail AddAdminEmail) {
 	if err != nil {
 		fmt.Println(err)
 	}
+
+	if (addAdminEmail.Flag == "B") {
+		err := dbs.Where("uniqueid = ? AND flag = ?", uniqueid, addAdminEmail.Flag).Find(&addAdminEmail)
+		if err != nil {
+			fmt.Println(err)
+		}
+		return
+	}
 	return
 }
 
