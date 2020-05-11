@@ -27,6 +27,9 @@ func DbMonitor() {
 	//dbs.Create(model.Servicemaster{Name: "todayappointment", Htmlname: "Today Appointment", Paths: "/opdTodayappointment"})
 	//dbs.Create(model.Servicemaster{Name: "newappointment", Htmlname: "New Opd Appointment", Paths: "/opdnewappointment"})
 	//dbs.Create(model.Servicemaster{Name: "opdappointmenthistory", Htmlname: "Opd Appointment History", Paths: "/opdhisappointment"})
+	//dbs.Create(model.Servicemaster{Name: "rights", Htmlname: "Rights", Paths: "/rightsmanagement"})
+	//dbs.Create(model.Rightsservicemapper{Servicename: "rights", Add: true, Edit: true, View: true, Delete: true, RightsmasterID: 1})
+	//dbs.Create(model.Rightsservicemapper{Servicename: "rights", Add: true, Edit: true, View: true, Delete: true, RightsmasterID: 2})
 }
 
 type CustomValidator struct {

@@ -37,7 +37,7 @@ func Login() echo.HandlerFunc {
 		claims := token.Claims.(jwt.MapClaims)
 		claims["name"] = u.Username
 		claims["role"] = "admin"
-		claims["user"] = s
+		//claims["user"] = s
 		claims["rights"] = Rights(d)
 		claims["exp"] = time.Now().Add(time.Hour * 72).Unix()
 
