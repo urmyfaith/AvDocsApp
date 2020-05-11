@@ -13,18 +13,6 @@ type Servicemaster struct {
 	Paths 		string		`json:"paths"`
 }
 
-func Allservicemasters() (servicemaster []Servicemaster) {
-	dbs  := db.DbConn()
-	dbs.Find(&servicemaster)
-	fmt.Println(servicemaster)
-	return
-}
-
-func Adminrightsonly() (servicemaster []Servicemaster) {
-	dbs := db.DbConn()
-	dbs.Not("name", []string{"addclinic", "addHot"}).Find(&servicemaster)
-	return
-}
 
 type Rightsservicemapper struct {
 	gorm.Model
@@ -50,6 +38,21 @@ type Rightsmaster struct {
 	Rightsname				string						`json:"rightsname"`
 	Rightsservicemapper		[]Rightsservicemapper		`gorm :"FOREIGNKEY:RightsmasterID; json:"rightsservicemapper"`
 }
+
+
+func Allservicemasters() (servicemaster []Servicemaster) {
+	dbs  := db.DbConn()
+	dbs.Find(&servicemaster)
+	fmt.Println(servicemaster)
+	return
+}
+
+func Adminrightsonly() (servicemaster []Servicemaster) {
+	dbs := db.DbConn()
+	dbs.Not("name", []string{"addclinic", "addHot"}).Find(&servicemaster)
+	return
+}
+
 
 func Getrights(id uint, clinicmasterid uint) (rightsmaster Rightsmaster, rightsservicemapper []Rightsservicemapper) {
 	dbs := db.DbConn()
