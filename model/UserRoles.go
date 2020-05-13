@@ -50,9 +50,40 @@ type Rightsmaster struct {
 	Rightsservicemapper		[]Rightsservicemapper		`gorm :"FOREIGNKEY:RightsmasterID; json:"rightsservicemapper"`
 }
 
+type RightsApi struct {
+	Id  			uint		`json:"id" validate:"required"`
+	Clinicid		uint		`json:"clinicid" validate:"required"`
+	Rightsname 		string		`json:"rightsname" validate:"required"`
+	Rightdata		[]Right		`json:"rightdata" validate:"required"`
+}
+
+
+func SaveRights(rr *RightsApi) (right []Right) {
+	var rightsmaster Rightsmaster
+	rightsmaster.ClinicmasterID = rr.Clinicid
+	rightsmaster.Rightsname = rr.Rightsname
+	for _, v := range rr.Rightdata {
+		rightsmaster.Rightsservicemapper = append(rightsmaster.Rightsservicemapper, Rightsservicemapper{Servicename: v.Servicename, Add: v.Add, Edit: v.Edit, View: v.View, Delete: v.Delete})
+	}
+	dbs  := db.DbConn()
+	defer dbs.Close()
+	dbs.Create(&rightsmaster)
+	fmt.Println("rights saved ",rightsmaster)
+	var rightsservicemapper []Rightsservicemapper
+	if rightsmaster.ID != 0 {
+		dbs.Where("rightsmaster_id = ?", rightsmaster.ID).Find(&rightsservicemapper)
+		for _, v := range rightsservicemapper {
+			right = append(right, Right{Servicename: v.Servicename, Htmltag: "ok", Comments: "ok", Delete: v.Delete, Add: v.Add, Edit: v.Edit, View: v.View})
+		}
+	}
+	return
+}
+
+
 
 func Allservicemasters() (servicemaster []Servicemaster) {
 	dbs  := db.DbConn()
+	defer dbs.Close()
 	dbs.Find(&servicemaster)
 	fmt.Println(servicemaster)
 	return
@@ -60,7 +91,7 @@ func Allservicemasters() (servicemaster []Servicemaster) {
 
 func Adminrightsonly() (servicemaster []Servicemaster) {
 	dbs := db.DbConn()
-	dbs.Not("name", []string{"addclinic", "addHot"}).Find(&servicemaster)
+	dbs.Not("name", []string{"clinic_managements", "addHot"}).Find(&servicemaster)
 	return
 }
 
@@ -75,7 +106,7 @@ func Getrights(id uint, clinicmasterid uint) (rightsmaster Rightsmaster, rightss
 func GetAllRights() (right []Right) {
 	dbs := db.DbConn()
 	defer dbs.Close()
-	dbs.Find(&right)
+	dbs.Not("servicename", []string{"clinic_managements", "addHot"}).Find(&right)
 	return
 }
 

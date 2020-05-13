@@ -86,6 +86,10 @@ func main() {
 	//send all rights
 	r.GET("/sendrights", handlers.Sendrights())
 
+	//get new rights from frontend
+	r.POST("/saverights", handlers.Saverights())
+
+
 	//start server
 	e.Logger.Fatal(e.Start(":8000"))
 }

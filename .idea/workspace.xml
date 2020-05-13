@@ -20,11 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28a3bd0a-e4da-43d0-ad07-84aaeac3a636" name="Default Changelist" comment="commit">
-      <change afterPath="$PROJECT_DIR$/handlers/rights.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/loginHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/loginHandler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/rights.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/rights.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/User.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/User.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/UserRoles.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/UserRoles.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,6 +88,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="512" y="263" key="#Go_Modules/0.0.1440.860@0.0.1440.860" timestamp="1587493372905" />
+    <state x="266" y="58" key="#Inspections" timestamp="1589396693884">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="266" y="58" key="#Inspections/0.0.1280.760@0.0.1280.760" timestamp="1589396693884" />
     <state x="605" y="292" key="#Notifications" timestamp="1587497921842">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
