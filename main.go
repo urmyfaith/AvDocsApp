@@ -4,8 +4,6 @@ import (
 	"AvDocsApp/db"
 	"AvDocsApp/handlers"
 	"AvDocsApp/middlewares"
-	"AvDocsApp/model"
-
 	//"database/sql"
 	"fmt"
 	"github.com/go-playground/validator/v10"
@@ -31,7 +29,11 @@ func DbMonitor() {
 	//dbs.Create(model.Servicemaster{Name: "opdappointmenthistory", Htmlname: "Opd Appointment History", Paths: "/opdhisappointment"})
 	//dbs.Create(model.Servicemaster{Name: "rights", Htmlname: "Rights", Paths: "/rightsmanagement"})
 	//dbs.Create(model.Rightsservicemapper{Servicename: "rights", Add: true, Edit: true, View: true, Delete: true, RightsmasterID: 1})
-	dbs.Create(model.Rightsservicemapper{Servicename: "rights", View: true, Add: true, Edit: false, Delete: false, RightsmasterID: 2})
+	//dbs.Create(model.Rightsservicemapper{Servicename: "rights", View: true, Add: true, Edit: false, Delete: false, RightsmasterID: 2})
+	//dbs.CreateTable(model.Right{})
+	//dbs.Create(model.Right{Servicename: "clinic_managements", Add: false, Edit: false, View: false, Delete: false, Comments: "Clinic Management", Htmltag: "Clinic Management"})
+	//dbs.Create(model.Right{Servicename: "user_managements", Add: false, Edit: false, View: false, Delete: false, Comments: "User Management", Htmltag: "User Management"})
+	//dbs.Create(model.Right{Servicename: "rights", Add: false, Edit: false, View: false, Delete: false, Comments: "Rights Management", Htmltag: "Rights Management"})
 }
 
 type CustomValidator struct {
@@ -81,7 +83,8 @@ func main() {
 	//addclinic
 	r.POST("/addclinic", handlers.AddClinic())
 
-
+	//send all rights
+	r.GET("/sendrights", handlers.Sendrights())
 
 	//start server
 	e.Logger.Fatal(e.Start(":8000"))

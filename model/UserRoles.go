@@ -25,6 +25,17 @@ type Rightsservicemapper struct {
 }
 
 type Right struct {
+	gorm.Model
+	Servicename				string			`json:"servicename"`
+	Add 					bool			`json:"add"`
+	Edit 					bool 			`json:"edit"`
+	View					bool			`json:"view"`
+	Delete 					bool			`json:"delete"`
+	Comments				string 			`json:"comments"`
+	Htmltag					string			`json:"htmltag"`
+}
+
+type Rightdata struct {
 	Servicename				string			`json:"servicename"`
 	Add 					bool			`json:"add"`
 	Edit 					bool 			`json:"edit"`
@@ -53,12 +64,18 @@ func Adminrightsonly() (servicemaster []Servicemaster) {
 	return
 }
 
-
 func Getrights(id uint, clinicmasterid uint) (rightsmaster Rightsmaster, rightsservicemapper []Rightsservicemapper) {
 	dbs := db.DbConn()
 	defer dbs.Close()
 	dbs.Where("id = ? and clinicmaster_id = ?", id, clinicmasterid).Find(&rightsmaster)
 	dbs.Where("rightsmaster_id = ?", rightsmaster.ID).Find(&rightsservicemapper)
+	return
+}
+
+func GetAllRights() (right []Right) {
+	dbs := db.DbConn()
+	defer dbs.Close()
+	dbs.Find(&right)
 	return
 }
 

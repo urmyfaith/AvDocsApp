@@ -37,7 +37,7 @@ func Login() echo.HandlerFunc {
 		claims := token.Claims.(jwt.MapClaims)
 		claims["name"] = u.Username
 		claims["role"] = "admin"
-		//claims["user"] = s
+		claims["user"] = model.Data{Id: counts.ID, Clinicid: counts.ClinicmasterID}
 		claims["rights"] = Rights(d)
 		claims["exp"] = time.Now().Add(time.Hour * 72).Unix()
 
@@ -53,9 +53,9 @@ func Login() echo.HandlerFunc {
 	}
 }
 
-func Rights(rights []model.Rightsservicemapper) (right []model.Right) {
+func Rights(rights []model.Rightsservicemapper) (right []model.Rightdata) {
 	for _, f := range rights {
-		right = append( right, model.Right{Servicename: f.Servicename,Add: f.Add, Edit: f.Edit, Delete: f.Delete, View: f.View})
+		right = append( right, model.Rightdata{Servicename: f.Servicename, Add: f.Add, Edit: f.Edit, Delete: f.Delete, View: f.View})
 	}
 	return
 }

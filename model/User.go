@@ -11,6 +11,12 @@ type Client struct {
 	Password string `json:"password" xml:"password" validate:"required"`
 }
 
+type Data struct {
+	Id uint `json:"id"`
+	Clinicid uint `json:"clinicid"`
+}
+
+
 func CheckLogin(u *Client) (loginmaster Loginmaster) {
 	dbs := db.DbConn()
 	defer dbs.Close()
