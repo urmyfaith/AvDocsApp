@@ -89,6 +89,8 @@ func main() {
 	//get new rights from frontend
 	r.POST("/saverights", handlers.Saverights())
 
+	//get clinic all rights by id
+	r.GET("/getAllRightsbyId/:id", handlers.GetRightsByClinicId())
 
 	//start server
 	e.Logger.Fatal(e.Start(":8000"))

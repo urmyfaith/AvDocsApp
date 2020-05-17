@@ -110,5 +110,12 @@ func GetAllRights() (right []Right) {
 	return
 }
 
+func GetClinetwiserights(id uint64) (rightsmaster []Rightsmaster) {
+	dbs := db.DbConn()
+	defer dbs.Close()
+	dbs.Where("clinicmaster_id = ? ", id).Find(&rightsmaster)
+	return
+}
+
 
 
