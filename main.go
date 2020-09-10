@@ -4,8 +4,10 @@ import (
 	"AvDocsApp/db"
 	"AvDocsApp/handlers"
 	"AvDocsApp/middlewares"
+
 	//"database/sql"
 	"fmt"
+
 	"github.com/go-playground/validator/v10"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
@@ -89,10 +91,15 @@ func main() {
 	//get new rights from frontend
 	r.POST("/saverights", handlers.Saverights())
 
-	//get clinic all rights by id
+	//get clinic all rights by clinic_id
 	r.GET("/getAllRightsbyId/:id", handlers.GetRightsByClinicId())
+
+	//delete rights by id
+	r.DELETE("/deleteright/:id", handlers.Deleterights())
+
+	//html test
+	r.GET("/html", handlers.Htmlhandlers())
 
 	//start server
 	e.Logger.Fatal(e.Start(":8000"))
 }
-

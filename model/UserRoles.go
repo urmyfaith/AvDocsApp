@@ -117,5 +117,12 @@ func GetClinetwiserights(id uint64) (rightsmaster []Rightsmaster) {
 	return
 }
 
+func DeleterightByid(id uint64)  {
+	dbs := db.DbConn()
+	defer dbs.Close()
+	dbs.Where("rightsmaster_id = ?", id).Delete(&Rightsservicemapper{})
+	dbs.Where("id = ?", id).Delete(&Rightsmaster{})
+}
+
 
 

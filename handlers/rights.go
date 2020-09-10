@@ -40,3 +40,15 @@ func GetRightsByClinicId() echo.HandlerFunc {
 		return c.JSON(http.StatusOK, model.GetClinetwiserights(u))
 	}
 }
+
+func Deleterights() echo.HandlerFunc {
+	return func(c echo.Context) (err error) {
+		id := c.Param("id")
+		u, err := strconv.ParseUint(id, 10, 64)
+		if err != nil {
+			return err
+		}
+		model.DeleterightByid(u)
+		return
+	}
+}
